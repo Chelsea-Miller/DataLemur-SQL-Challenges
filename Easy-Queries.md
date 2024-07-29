@@ -10,3 +10,13 @@ select candidate_id FROM
   GROUP BY candidate_id) as skills
 Where skill_count = 3
 ```
+## Page With No Likes
+
+Question Source: https://datalemur.com/questions/sql-page-with-no-likes
+
+```
+SELECT pages.page_id 
+FROM pages FULL OUTER JOIN page_likes on pages.page_id = page_likes.page_id
+Where page_likes.page_id is NULL
+order by page_id;
+```
